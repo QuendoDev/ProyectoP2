@@ -19,4 +19,6 @@ if st.ex1:
 
 
 # Modulo de calculo
+if st.ex2:
+    ex.ex2(paths[1])
 

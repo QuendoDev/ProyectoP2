@@ -78,8 +78,8 @@ def ex1(path):
 
 def ex2(path):
     mag = np.zeros(len(ic.T_2))
-    i = 0
-    for t in ic.T_2:
+    for k in range(len(ic.T_2)):
+        t = ic.T_2[k]
         Z = 0
         mag_prom = 0
         beta = 1 / t
@@ -93,15 +93,46 @@ def ex2(path):
                 Z += param
                 mag_prom += param * magnetization
 
-            s = mc.step(t, s.copy(), ic.N_CALC)
+            s = mc.step(t, s.flatten().copy(), ic.N_CALC).reshape(ic.N_CALC, ic.N_CALC)
 
+            if i == ic.CYCLES // 4:
+                print(t, '25%')
+            elif i == ic.CYCLES // 2:
+                print(t, '50%')
+            elif i == ic.CYCLES // 4 * 3:
+                print(t, '75%')
+
+        print(t, '100%')
         mag_t = mag_prom / Z
-        mag[i] = mag_t
+        mag[k] = mag_t
+        np.save(os.path.join(path, 'mag'), mag)
         rs.ising_results(t, beta, ic.N_CALC, mag_t, Z, s_0, path)
 
+    # Limpia la memoria
+    del mag
+    gc.collect()
+
     if st.graph:
+        # Se obtiene la magnetizacion promedio del archivo .npy guardado
+        mag = np.load(os.path.join(path, 'mag.npy'))
+
+
+        # Se grafica la magnetizacion promedio vs T
         fig, ax = plt.subplots()
-        # TODO
+
+        ax.plot(ic.T_2, mag,
+                color='red',
+                marker='o', markersize=2,
+                label='Magnetizacion promedio')
+
+        ax.set_xlabel('T')
+        ax.set_ylabel('<m>')
+
+        ax.set_title('Magnetizacion promedio vs T')
+        ax.legend(loc='lower left')
+
+        plt.savefig(os.path.join(path, 'graph.jpg'), dpi=300)
+        plt.show()
 
 # if st.calc:
 #     # Se calcula la magnetizacion y la energia promedio

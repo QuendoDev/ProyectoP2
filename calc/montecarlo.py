@@ -1,6 +1,13 @@
 import numpy as np
 
 
+def step(T, s, N):
+    matrix = s.reshape(N, N)
+    for i in range(N ** 2):
+        matrix = alg(T, matrix, N)
+    return matrix.flatten()
+
+
 def alg(T, s, N):
     # Algoritmo de metropolis para generar configuraciones tipicas con probabilidad de equilibrio
     # T: Temperatura

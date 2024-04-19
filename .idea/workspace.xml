@@ -4,11 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31148482-e1ae-4676-a5fa-319867f89b10" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="31148482-e1ae-4676-a5fa-319867f89b10" name="Changes" comment="Sesion 1">
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_0.5_16x16.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_0.5_16x16.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_3_16x16.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_3_16x16.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_5_16x16.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_5_16x16.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_0.5_32x32.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_0.5_32x32.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_3_32x32.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_3_32x32.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_5_32x32.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_5_32x32.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_0.5_64x64.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_0.5_64x64.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_3_64x64.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_3_64x64.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_5_64x64.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_5_64x64.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_0.5_8x8.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_0.5_8x8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_3_8x8.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_3_8x8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_5_8x8.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_5_8x8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calc/parameters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/exercises.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/result_printer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/files.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/ising_2.5.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/ising_2.5.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/ising.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/ising_2.5.mp4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/anim/animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/anim/animation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calc/montecarlo.py" beforeDir="false" afterPath="$PROJECT_DIR$/calc/montecarlo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -29,12 +58,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/QuendoDev/ProyectoP2.git",
-    "accountId": "21751230-38a1-45fc-92e6-e4c69bbd5336"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;QuendoDev&quot;
   }
-}]]></component>
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/QuendoDev/ProyectoP2.git&quot;,
+    &quot;accountId&quot;: &quot;21751230-38a1-45fc-92e6-e4c69bbd5336&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -49,12 +84,20 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.ajuste.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/euget/Downloads/Fisica Computacional/P0 - Introduccion a Linux y Python/Introduccion a Python&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\euget\Downloads\Fisica Computacional\P2 - Modelo de Ising\Proyecto P2" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Proyecto P2" />
@@ -95,9 +138,20 @@
       <option name="presentableId" value="Default" />
       <updated>1712845860058</updated>
     </task>
+    <task id="LOCAL-00001" summary="Sesion 1">
+      <option name="closed" value="true" />
+      <created>1712893631093</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712893631093</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Sesion 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sesion 1" />
   </component>
 </project>

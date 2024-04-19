@@ -3,14 +3,11 @@ from matplotlib import pyplot as plt
 from matplotlib.animation import FuncAnimation
 from matplotlib.patches import Patch
 
-import setup.initial_conditions as ic
-import calc.montecarlo as mc
 
-
-def make_anim(T, s):
-    path = "C:/Users/euget/Downloads/Fisica Computacional/P2 - Modelo de Ising/Proyecto P2/"
-    file_out = path + "Resultado/ising_" + str(T)  # Nombre del fichero de salida (sin extensión)
-    interval = 100  # Tiempo entre fotogramas en milisegundos
+def make_anim(all_s, steps, n, t, path):
+    name = "ising_" + str(t) + "_" + str(n) + "x" + str(n)
+    file_out = path + "/" + name  # Nombre del fichero de salida (sin extensión)
+    interval = 200  # Tiempo entre fotogramas en milisegundos
 
     # False: muestra la animación por pantalla
     # True: la guarda en un fichero
@@ -22,11 +19,8 @@ def make_anim(T, s):
     # frames_data[j] contiene los datos del fotograma j-ésimo
     frames_data = list()
 
-    frames_data.append(s.copy())
-
-    for i in range(ic.CYCLES):
-        s = mc.alg(T, s.copy(), ic.N)
-        frames_data.append(s.copy())
+    for i in range(steps + 1):
+        frames_data.append(all_s[i].reshape(n, n).copy())
 
     # Crea los objetos figure y axis
     fig, ax = plt.subplots()
@@ -34,14 +28,19 @@ def make_anim(T, s):
     # Define el rango de los ejes
     ax.axis("off")
 
+    # Agrega una línea de borde alrededor del cuadrado grande
+    # ax.plot([-0.5, n - 0.5, n - 0.5, -0.5, -0.5],
+    #         [-0.5, -0.5, n - 0.5, n - 0.5, -0.5],
+    #         color='black')
+
     # Crear un mapa de colores personalizado
-    cmap = mcolors.ListedColormap(['red', 'blue'])
+    cmap = mcolors.ListedColormap(['grey', 'black'])
     bounds = [-1, 0, 1]
     norm = mcolors.BoundaryNorm(bounds, cmap.N)
 
     # Crear los objetos Patch para la leyenda
-    legend_elements = [Patch(facecolor='red', edgecolor='r', label='-1'),
-                       Patch(facecolor='blue', edgecolor='b', label='1')]
+    legend_elements = [Patch(facecolor='grey', edgecolor='k', label='-1'),
+                       Patch(facecolor='black', edgecolor='k', label='1')]
 
     # Añadir la leyenda a los ejes
     ax.legend(handles=legend_elements, loc='upper right')

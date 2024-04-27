@@ -4,7 +4,7 @@ import setup.initial_conditions as ic
 
 
 def magnetization(s):
-    return s.sum() / ic.N_CALC ** 2
+    return np.abs(s.sum()) / ic.N_CALC ** 2
 
 
 def energy(s, n):

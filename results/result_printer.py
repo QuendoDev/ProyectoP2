@@ -2,7 +2,7 @@ import os
 import numpy as np
 
 
-def ising_results(t, beta, N, mag_prom, Z, s_0, path):
+def ising_results(t, beta, N, mag_prom, Z, s_0, time, path):
     name = "ising_" + str(t) + "_" + str(N) + "x" + str(N) + ".txt"
 
     with open(os.path.join(path, name), 'w') as f:
@@ -23,6 +23,9 @@ def ising_results(t, beta, N, mag_prom, Z, s_0, path):
         f.write('\n----------------------------------------------------------------\n')
         f.write('\nZ calculada:\n')
         f.write(str(Z) + '\n')
+        f.write('\n----------------------------------------------------------------\n')
+        f.write('\nTiempo para calcular el promedio:\n')
+        f.write(str(time) + ' s\n')
         f.write('\n----------------------------------------------------------------\n')
         f.write('\nMagnetización promedio:\n')
         f.write(str(mag_prom) + '\n')

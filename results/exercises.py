@@ -22,6 +22,13 @@ def ex1(path):
             s = np.random.choice([-1, 1], (n ** 2))
             s_0 = s.copy()
 
+            # Se calcula el vector de probabilidades sabiendo que la variacion de energía solo puede tomar
+            # los valores -8, -4, 0, 4, 8.
+            p = np.zeros(5)
+            for i in range(5):
+                v = 4 * i - 8
+                p[i] = np.exp(-v / t)
+
             # Se inicializa la matriz que contendrá todas las configuraciones generadas
             #s_all = np.empty((ic.CYCLES, n, n))
             s_all = np.empty((ic.CYCLES, n ** 2))
@@ -39,7 +46,7 @@ def ex1(path):
                 if eq:
                     break
 
-                s = mc.step(t, s.copy(), n)
+                s = mc.step(s.copy(), n, p)
                 s_all[i] = s.copy()
 
                 # Se verifica si la configuracion ya esta en equilibrio viendo si la matriz s_all en la posicion i
@@ -77,50 +84,69 @@ def ex1(path):
 
 
 def ex2(path):
-    mag = np.zeros(len(ic.T_2))
+    time0 = time.time()
+    mag_proms = np.zeros(len(ic.T_2))
+    s_0 = np.random.choice([-1, 1], (ic.N_CALC, ic.N_CALC))
+    mag = np.zeros(ic.CYCLES // ic.STEP)
     for k in range(len(ic.T_2)):
+
+        time1 = time.time()
+        time2 = 0
+        time3 = 0
+        time4 = 0
+
         t = ic.T_2[k]
         Z = 0
         mag_prom = 0
         beta = 1 / t
-        s = np.random.choice([-1, 1], (ic.N_CALC, ic.N_CALC))
-        s_0 = s.copy()
-        for i in range(ic.CYCLES):
-            if i % 100 == 0:
-                magnetization = cp.magnetization(s)
-                energy = cp.energy(s, ic.N_CALC)
-                param = np.exp(-beta * energy)
-                Z += param
-                mag_prom += param * magnetization
 
-            s = mc.step(t, s.flatten().copy(), ic.N_CALC).reshape(ic.N_CALC, ic.N_CALC)
+        s = s_0.copy()
+
+        p = np.zeros(5)
+        for i in range(5):
+            v = 4 * i - 8
+            p[i] = np.exp(-v / t)
+
+        for i in range(ic.CYCLES):
+            if i % ic.STEP == 0:
+                mag[i // ic.STEP] = cp.magnetization(s)
+
+            s = mc.step_matrix(s, ic.N_CALC, p)
 
             if i == ic.CYCLES // 4:
-                print(t, '25%')
+                time2 = time.time()
+                print(t, '25%', str(time2 - time1) + ' s', str(time2 - time1) + ' s')
             elif i == ic.CYCLES // 2:
-                print(t, '50%')
+                time3 = time.time()
+                print(t, '50%', str(time3 - time1) + ' s', str(time3 - time2) + ' s')
             elif i == ic.CYCLES // 4 * 3:
-                print(t, '75%')
+                time4 = time.time()
+                print(t, '75%', str(time4 - time1) + ' s', str(time4 - time3) + ' s')
 
-        print(t, '100%')
-        mag_t = mag_prom / Z
-        mag[k] = mag_t
+        final_time = time.time() - time1
+        print(t, '100%', str(final_time) + ' s', str(time.time() - time4) + ' s')
+        mag_t = np.mean(mag)
+        mag_proms[k] = mag_t
+        rs.ising_results(t, beta, ic.N_CALC, mag_t, Z, s_0, final_time, path)
+
+    print('Total time: ', time.time() - time0)
+
+    if st.separate_process:
         np.save(os.path.join(path, 'mag'), mag)
-        rs.ising_results(t, beta, ic.N_CALC, mag_t, Z, s_0, path)
 
-    # Limpia la memoria
-    del mag
-    gc.collect()
+        # Limpia la memoria
+        del mag
+        gc.collect()
 
     if st.graph:
-        # Se obtiene la magnetizacion promedio del archivo .npy guardado
-        mag = np.load(os.path.join(path, 'mag.npy'))
-
+        if st.separate_process:
+            # Se obtiene la magnetizacion promedio del archivo .npy guardado
+            mag = np.load(os.path.join(path, 'mag.npy'))
 
         # Se grafica la magnetizacion promedio vs T
         fig, ax = plt.subplots()
 
-        ax.plot(ic.T_2, mag,
+        ax.plot(ic.T_2, mag_proms,
                 color='red',
                 marker='o', markersize=2,
                 label='Magnetizacion promedio')
@@ -131,27 +157,5 @@ def ex2(path):
         ax.set_title('Magnetizacion promedio vs T')
         ax.legend(loc='lower left')
 
-        plt.savefig(os.path.join(path, 'graph.jpg'), dpi=300)
+        plt.savefig(os.path.join(path, 'graph_' + str(ic.N_CALC) + 'x' + str(ic.N_CALC) + '.jpg'), dpi=300)
         plt.show()
-
-# if st.calc:
-#     # Se calcula la magnetizacion y la energia promedio
-#     Z = 0
-#     mag_prom = 0
-#     for i in range(ic.CYCLES):
-#         if i % 100 == 0:
-#             magnetization = cp.magnetization(s_all[i])
-#             energy = cp.energy(s_all[i])
-#             param = np.exp(-ic.beta * energy)
-#             Z += param
-#             mag_prom += param * magnetization
-#
-#             # print('i: ', i)
-#             # print('s_all[i]: ', s_all[i])
-#             # print('magnetization: ', magnetization)
-#             # print('energy: ', energy)
-#             # print('ic.beta: ', ic.beta * energy)
-#             # print('Z: ', Z)
-#             # print('mag_prom: ', mag_prom)
-#
-#     print('Magnetizacion promedio: ', mag_prom / Z)

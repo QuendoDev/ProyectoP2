@@ -1,14 +1,21 @@
 import numpy as np
 
 
-def step(T, s, N):
+def step_matrix(s, N, p):
+    matrix = s
+    for i in range(N ** 2):
+        matrix = alg(matrix, N, p)
+    return matrix
+
+
+def step(s, N, p):
     matrix = s.reshape(N, N)
     for i in range(N ** 2):
-        matrix = alg(T, matrix, N)
+        matrix = alg(matrix, N, p)
     return matrix.flatten()
 
 
-def alg(T, s, N):
+def alg(s, N, prob):
     # Algoritmo de metropolis para generar configuraciones tipicas con probabilidad de equilibrio
     # T: Temperatura
     # s: Configuracion inicial
@@ -27,7 +34,12 @@ def alg(T, s, N):
     # s(0, j) = s(N, j), s(i, 0) = s(i, N), s(N+1, j) = s(1, j), s(i, N+1) = s(i, 1).
 
     var_E = 2 * s[n, m] * (s[(n + 1) % N, m] + s[(n - 1) % N, m] + s[n, (m + 1) % N] + s[n, (m - 1) % N])
-    p = min(1, np.exp(-var_E / T))
+
+    # Para sacar la probabilidad p, en vez de calcularla con la formula de arriba, se usa el vector p que se pasa
+    # como argumento. Este solo tiene 5 valores, por lo que solo hay que calcular la posicion de i sabiendo que
+    # var_E = 4*i - 8.
+    i = (var_E + 8) // 4
+    p = prob[i]
 
     # Se genera un numero aleatorio uniforme r entre 0 y 1
     r = np.random.rand()

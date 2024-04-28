@@ -1,14 +1,14 @@
-import vol.constants as cte
-import vol.file_manager as fm
-import vol.vol_params as param
-import vol.algorithms as alg
-import vol.results_manager as rm
-
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.gridspec as gridspec
 import os
 import time
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+import vol.algorithms as alg
+import vol.constants as cte
+import vol.file_manager as fm
+import vol.results_manager as rm
+import vol.vol_params as param
 
 # Se quieren calcular una lista de parametros para cada N en [16, 32, 64, 128], representando para cada temperatura
 # en [1.5, 3.5] con 10 valores. Los parametros que se quieren calcular son:
@@ -167,12 +167,12 @@ for N in cte.N:
     fig.savefig(os.path.join(os.path.join(result_path, str(N) + 'x' + str(N)),
                              'graph.jpg'), dpi=300)
 
-    # Muestro la figura.
-    plt.show()
-
     # Calculo el tiempo que ha tardado en hacer los graficos para este N.
     finish_graph_n = time.time()
     print(f'Tiempo para graficos de {N}x{N}: {finish_graph_n - finish_calc_n} s')
+
+    # Muestro la figura.
+    plt.show()
 
     # Guardo los resultados en un archivo de texto.
     rm.n_results(N, s_0,

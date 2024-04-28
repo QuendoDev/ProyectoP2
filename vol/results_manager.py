@@ -36,7 +36,7 @@ def t_results(T, N, s_0, time, mag, ene, cv, corr_first, corr_second, path):
         f.write(str(corr_second) + '\n')
         f.write('\n----------------------------------------------------------------\n')
         f.write('\nTiempo empleado:\n')
-        f.write(format_time(time) + ' s\n')
+        f.write(format_time(time)+ '\n')
         f.write('\n----------------------------------------------------------------\n')
 
 
@@ -78,7 +78,7 @@ def n_results(N, s_0, calc_time, graph_time, mag, ene, cv, corr_first, corr_seco
         f.write(format_time(graph_time) + '\n')
         f.write('\n----------------------------------------------------------------\n')
         f.write('\nTiempo total empleado:\n')
-        f.write(format_time(calc_time + graph_time) + ' s\n')
+        f.write(format_time(calc_time + graph_time) + '\n')
         f.write('\n----------------------------------------------------------------\n')
 
 

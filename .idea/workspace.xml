@@ -4,84 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31148482-e1ae-4676-a5fa-319867f89b10" name="Changes" comment="Edit the ex2">
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/graph_4x4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/graph_8x8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_0.5_4x4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_0.5_8x8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_1.0_4x4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_1.0_8x8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_1.5_4x4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_1.5_8x8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_1.625_4x4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_2.0_4x4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_2.0_8x8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_2.5_4x4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_2.5_8x8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_2.75_4x4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_3.0_4x4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_3.0_8x8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_3.5_4x4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_3.5_8x8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_3.875_4x4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_4.0_4x4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_4.0_8x8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_4.5_4x4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_4.5_8x8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_5.0_4x4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Ejercicio 2/ising_5.0_8x8.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/16x16/1.5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/16x16/1.7222222222222223.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/16x16/1.9444444444444444.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/16x16/2.1666666666666665.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/16x16/2.388888888888889.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/16x16/2.611111111111111.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/16x16/2.833333333333333.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/16x16/3.0555555555555554.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/16x16/3.2777777777777777.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/16x16/3.5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/16x16/graph.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/16x16/result.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/joel/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/joel/joel_module.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vol/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vol/algorithms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vol/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vol/file_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vol/results_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vol/vol_main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vol/vol_params.py" afterDir="false" />
+    <list default="true" id="31148482-e1ae-4676-a5fa-319867f89b10" name="Changes" comment="Some modifications of the voluntary exercise">
+      <change afterPath="$PROJECT_DIR$/mi_log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/analysis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/sim_results.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_0.5_16x16.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_0.5_16x16.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_0.5_16x16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_0.5_16x16.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_3_16x16.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_3_16x16.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_3_16x16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_3_16x16.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_5_16x16.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_5_16x16.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_5_16x16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/16x16/ising_5_16x16.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_0.5_32x32.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_0.5_32x32.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_0.5_32x32.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_0.5_32x32.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_3_32x32.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_3_32x32.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_3_32x32.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_3_32x32.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_5_32x32.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_5_32x32.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_5_32x32.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/32x32/ising_5_32x32.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_0.5_64x64.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_0.5_64x64.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_0.5_64x64.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_0.5_64x64.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_3_64x64.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_3_64x64.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_3_64x64.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_3_64x64.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_5_64x64.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_5_64x64.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_5_64x64.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/64x64/ising_5_64x64.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_0.5_8x8.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_0.5_8x8.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_0.5_8x8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_0.5_8x8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_3_8x8.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_3_8x8.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_3_8x8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_3_8x8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_5_8x8.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_5_8x8.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_5_8x8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Ejercicio 1/8x8/ising_5_8x8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calc/montecarlo.py" beforeDir="false" afterPath="$PROJECT_DIR$/calc/montecarlo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calc/parameters.py" beforeDir="false" afterPath="$PROJECT_DIR$/calc/parameters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/exercises.py" beforeDir="false" afterPath="$PROJECT_DIR$/results/exercises.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/result_printer.py" beforeDir="false" afterPath="$PROJECT_DIR$/results/result_printer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/initial_conditions.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/initial_conditions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/results_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/results_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/vol_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/vol_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,25 +51,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.ajuste.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.vol.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/euget/Downloads/Fisica Computacional/P2 - Modelo de Ising/Proyecto P2/vol/vol_main.py",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.ajuste.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.vol.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/euget/Downloads/Fisica Computacional/P2 - Modelo de Ising/Proyecto P2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\euget\Downloads\Fisica Computacional\P2 - Modelo de Ising\Proyecto P2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.vol">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Proyecto P2" />
       <option name="ENV_FILES" value="" />
@@ -186,14 +116,14 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.vol" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.vol" />
     </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
       </set>
     </attachedChunks>
   </component>
@@ -230,7 +160,63 @@
       <option name="project" value="LOCAL" />
       <updated>1713488349723</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added a module for joel supercomputer">
+      <option name="closed" value="true" />
+      <created>1714220461429</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714220461429</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Compiling and simulations results">
+      <option name="closed" value="true" />
+      <created>1714220545342</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714220545342</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added module for joel supercomputer">
+      <option name="closed" value="true" />
+      <created>1714220560298</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714220560298</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added voluntary exercise module">
+      <option name="closed" value="true" />
+      <created>1714220580047</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1714220580047</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Final obligatory exercise commit">
+      <option name="closed" value="true" />
+      <created>1714220612264</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714220612264</updated>
+    </task>
+    <task id="LOCAL-00009" summary="More results of executions">
+      <option name="closed" value="true" />
+      <created>1714318856511</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1714318856511</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Some modifications of the voluntary exercise">
+      <option name="closed" value="true" />
+      <created>1714319057674</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714319057674</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -238,6 +224,13 @@
     <MESSAGE value="Sesion 1" />
     <MESSAGE value="Sesion 1.5" />
     <MESSAGE value="Edit the ex2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit the ex2" />
+    <MESSAGE value="Added a module for joel supercomputer" />
+    <MESSAGE value="Compiling and simulations results" />
+    <MESSAGE value="Added module for joel supercomputer" />
+    <MESSAGE value="Added voluntary exercise module" />
+    <MESSAGE value="Final obligatory exercise commit" />
+    <MESSAGE value="More results of executions" />
+    <MESSAGE value="Some modifications of the voluntary exercise" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some modifications of the voluntary exercise" />
   </component>
 </project>

@@ -34,4 +34,22 @@ def init_files():
         except FileExistsError:
             pass
 
+    an_dir = os.path.join(result_path, 'Analisis')
+    try:
+        os.mkdir(an_dir)
+    except FileExistsError:
+        pass
+
+    an_extra_data_dir = os.path.join(an_dir, 'Datos')
+    try:
+        os.mkdir(an_extra_data_dir)
+    except FileExistsError:
+        pass
+
+    onsager_dir = os.path.join(an_dir, 'Onsager')
+    try:
+        os.mkdir(onsager_dir)
+    except FileExistsError:
+        pass
+
     return result_path

@@ -4,12 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31148482-e1ae-4676-a5fa-319867f89b10" name="Changes" comment="Some modifications of the voluntary exercise">
+    <list default="true" id="31148482-e1ae-4676-a5fa-319867f89b10" name="Changes" comment="Added supercomputer simulations results">
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/1.9444444444444444.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/2.1666666666666665.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_first_onsager.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_first_onsager.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_second_onsager.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_second_onsager.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/cv_onsager.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/cv_onsager.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/e_onsager.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/e_onsager.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log_mag.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mi_log.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/vol/analysis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/modules/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/modules/correlation_module.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/modules/log_mag.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/modules/mag_module.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/modules/onsager_module.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/vol/sim_results.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vol/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/file_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vol/results_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/results_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vol/vol_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/vol_main.py" afterDir="false" />
     </list>
@@ -56,6 +73,8 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Python.ajuste.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.onsager_module.executor&quot;: &quot;Run&quot;,
+    &quot;Python.results_manager.executor&quot;: &quot;Run&quot;,
     &quot;Python.vol.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
@@ -66,10 +85,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\euget\Downloads\Fisica Computacional\P2 - Modelo de Ising\Proyecto P2\vol\modules" />
       <recent name="C:\Users\euget\Downloads\Fisica Computacional\P2 - Modelo de Ising\Proyecto P2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Proyecto P2" />
       <option name="ENV_FILES" value="" />
@@ -216,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714319057674</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added supercomputer simulations results">
+      <option name="closed" value="true" />
+      <created>1715692469311</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715692469311</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -231,6 +259,7 @@
     <MESSAGE value="Final obligatory exercise commit" />
     <MESSAGE value="More results of executions" />
     <MESSAGE value="Some modifications of the voluntary exercise" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some modifications of the voluntary exercise" />
+    <MESSAGE value="Added supercomputer simulations results" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added supercomputer simulations results" />
   </component>
 </project>

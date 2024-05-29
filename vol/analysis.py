@@ -54,9 +54,18 @@ def energy_onsager(T):
 
 
 def heat_onsager(T):
-    sh = np.sinh(2 / T)
-    E = float(ellipe((4 * sh) / (2 * sh + 1) ** 2))
-    return (1 / np.pi) * ((2 / T) ** 2) * ((2 * sh) ** (-1 / 2)) * E
+    T_c = 2 / np.log(1 + np.sqrt(2))
+    if T >= T_c:
+        return 0
+
+    t1 = (2 / np.pi) * ((2 / T) ** 2)
+    t2 = -np.log(1 - (T / T_c))
+    t3 = np.log(T_c / 2)
+    t4 = 1 + np.pi / 4
+    # sh = np.sinh(2 / T)
+    # E = float(ellipe((4 * sh) / (2 * sh + 1) ** 2))
+    # return (2 / np.pi) * ((2 / T) ** 2) * ((2 * sh) ** (-1 / 2)) * E
+    return t1 * (t2 + t3 - t4)
 
 
 def corr_onsager(T, i):

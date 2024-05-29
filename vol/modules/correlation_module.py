@@ -8,21 +8,6 @@ import vol.constants as cts
 import vol.algorithms as alg
 import vol.sim_results as sr
 
-dat_dir = ('C:/Users/euget/Downloads/Fisica Computacional/P2 - Modelo de Ising/Proyecto P2/Resultado/Voluntario/'
-           'Analisis/Datos')
-
-corr_total = np.zeros((len(cts.N), 4, len(cts.T)))
-
-corr_total[0, 0] = sr.fcorr0[0]
-corr_total[1, 0] = sr.fcorr0[1]
-corr_total[2, 0] = sr.fcorr0[2]
-corr_total[3, 0] = sr.fcorr0[3]
-
-corr_total[0, 1] = sr.fcorr1[0]
-corr_total[1, 1] = sr.fcorr1[1]
-corr_total[2, 1] = sr.fcorr1[2]
-corr_total[3, 1] = sr.fcorr1[3]
-
 
 def sum_correlation(s, i, N):
     s_plus_i = 0
@@ -74,22 +59,45 @@ def calc_corr(args):
     corr2 = np.mean(s_plus_i_second) / N ** 2
     print(N, T, 'f(5):', corr1)
     print(N, T, 'f(7):', corr2)
+    np.savetxt(os.path.join('C:/Users/euget/Downloads/Fisica Computacional/P2 - '
+                            'Modelo de Ising/Proyecto P2/Resultado/Voluntario/Analisis/Datos',
+                            f'corr_{N}_{T}.txt'), [corr1, corr2])
     return N, T, corr1, corr2
 
 
-# Generar los valores de correlación para N = [16, 32, 64, 128] y para T = np.linspace(1.5, 3.5, 10) con n workers.
-with ProcessPoolExecutor(max_workers=8) as executor:
-    results = executor.map(calc_corr,
-                           product(cts.N, cts.T))
+def main():
+    dat_dir = ('C:/Users/euget/Downloads/Fisica Computacional/P2 - Modelo de Ising/Proyecto P2/Resultado/Voluntario/'
+               'Analisis/Datos')
 
-# Recoger los resultados y actualizar corr_total.
-for result in results:
-    Nr, Tr, corr1r, corr2r = result
-    corr_total[np.where(cts.N == Nr)[0], 2, np.where(cts.T == Tr)[0]] = corr1r
-    corr_total[np.where(cts.N == Nr)[0], 3, np.where(cts.T == Tr)[0]] = corr2r
+    corr_total = np.zeros((len(cts.N), 4, len(cts.T)))
 
-# Guardar los valores de correlación en un archivo .npy en la carpeta Resultado/Voluntario/Analisis/Datos
-np.save(os.path.join(dat_dir, 'corr.npy'), corr_total)
+    corr_total[0, 0] = sr.fcorr0[0]
+    corr_total[1, 0] = sr.fcorr0[1]
+    corr_total[2, 0] = sr.fcorr0[2]
+    corr_total[3, 0] = sr.fcorr0[3]
 
-# Guardar los valores de correlación en un archivo .txt en la carpeta Resultado/Voluntario/Analisis/Datos
-np.savetxt(os.path.join(dat_dir, 'corr.txt'), corr_total)
+    corr_total[0, 1] = sr.fcorr1[0]
+    corr_total[1, 1] = sr.fcorr1[1]
+    corr_total[2, 1] = sr.fcorr1[2]
+    corr_total[3, 1] = sr.fcorr1[3]
+
+    # Generar los valores de correlación para N = [16, 32, 64, 128] y para T = np.linspace(1.5, 3.5, 10) con n workers.
+    with ProcessPoolExecutor(max_workers=8) as executor:
+        results = executor.map(calc_corr,
+                               product(cts.N, cts.T))
+
+    # Recoger los resultados y actualizar corr_total.
+    for result in results:
+        Nr, Tr, corr1r, corr2r = result
+        corr_total[np.where(cts.N == Nr)[0], 2, np.where(cts.T == Tr)[0]] = corr1r
+        corr_total[np.where(cts.N == Nr)[0], 3, np.where(cts.T == Tr)[0]] = corr2r
+
+    # Guardar los valores de correlación en un archivo .npy en la carpeta Resultado/Voluntario/Analisis/Datos
+    np.save(os.path.join(dat_dir, 'corr.npy'), corr_total)
+
+    # Guardar los valores de correlación en un archivo .txt en la carpeta Resultado/Voluntario/Analisis/Datos
+    np.savetxt(os.path.join(dat_dir, 'corr.txt'), corr_total)
+
+
+if __name__ == '__main__':
+    main()

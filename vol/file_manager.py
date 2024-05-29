@@ -52,4 +52,28 @@ def init_files():
     except FileExistsError:
         pass
 
+    ons_exp_dir = os.path.join(an_dir, 'Onsager vs Exp')
+    try:
+        os.mkdir(ons_exp_dir)
+    except FileExistsError:
+        pass
+
+    temp_dir = os.path.join(an_dir, 'Temperatura critica')
+    try:
+        os.mkdir(temp_dir)
+    except FileExistsError:
+        pass
+
+    exp_mag_dir = os.path.join(an_dir, 'Exponente de magnetizacion')
+    try:
+        os.mkdir(exp_mag_dir)
+    except FileExistsError:
+        pass
+
+    corr_dir = os.path.join(an_dir, 'Correlacion')
+    try:
+        os.mkdir(corr_dir)
+    except FileExistsError:
+        pass
+
     return result_path

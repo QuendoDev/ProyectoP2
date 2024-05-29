@@ -5,6 +5,7 @@ STEP = 100
 DIV = CYCLES // STEP
 N = np.array([16, 32, 64, 128])
 T = np.linspace(1.5, 3.5, 10)
+T_ext = np.linspace(1.5, 3.5, 100)
 i = np.array([1, 3])
 COLORS = np.array(['b', 'g', 'r', 'c'])
 

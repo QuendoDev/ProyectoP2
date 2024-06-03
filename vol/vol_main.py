@@ -67,14 +67,16 @@ else:
 ONSAGER = True
 CRITICAL_TEMPERATURE = True
 CRITICAL_EXPONENT = True
-CORRELATION = True
+CORRELATION = False
 
 ########################################################################################################################
 # 1. Describir el comportamiento de las anteriores magnitudes para el rango de temperaturas y tamaños. Comparar
 # con el resultado exácto de Onsager. Describir el efecto del tamaño en cada una de las variables.
 ########################################################################################################################
 if ONSAGER:
+    print('Empezando analisis de magnitudes y comparacion con Onsager')
     an_mod.onsager(result_path)
+    print('Finalizado analisis de magnitudes y comparacion con Onsager')
 else:
     print('Omitiendo analisis de magnitudes y comparacion con Onsager')
 
@@ -95,7 +97,9 @@ for i in range(len(cte.N)):
     max_T_cv[0, i], max_T_cv[1, i] = an.critical_temperature(i)
 
 if CRITICAL_TEMPERATURE:
+    print('Empezando analisis de temperatura crítica y calor específico máximo')
     an_mod.critical_temperature(result_path, max_T_cv)
+    print('Finalizado analisis de temperatura crítica y calor específico máximo')
 else:
     print('Omitiendo analisis de temperatura crítica y calor específico máximo')
 
@@ -103,7 +107,9 @@ else:
 # 4. Obtener numéricamente el exponente crítico β de la magnetización y comparar con el resultado exacto.
 ########################################################################################################################
 if CRITICAL_EXPONENT:
+    print('Empezando analisis de exponente crítico de la magnetización')
     an_mod.critical_exponent(result_path, max_T_cv)
+    print('Finalizado analisis de exponente crítico de la magnetización')
 else:
     print('Omitiendo analisis de exponente crítico de la magnetización')
 
@@ -112,6 +118,8 @@ else:
 # exponente crítico característico.
 ########################################################################################################################
 if CORRELATION:
-    an_mod.correlation(result_path)
+    print('Empezando analisis de longitud de correlación y exponente crítico de la función de correlación')
+    an_mod.correlation(result_path, max_T_cv)
+    print('Finalizado analisis de longitud de correlación y exponente crítico de la función de correlación')
 else:
     print('Omitiendo analisis de longitud de correlación y exponente crítico de la función de correlación')

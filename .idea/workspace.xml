@@ -4,19 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31148482-e1ae-4676-a5fa-319867f89b10" name="Changes" comment="Voluntary exercise first code">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/16x16/log_mag.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Datos/mag.npy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Datos/mag.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log_mag.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vol/modules/analisis_module.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vol/modules/simulation_module.py" afterDir="false" />
+    <list default="true" id="31148482-e1ae-4676-a5fa-319867f89b10" name="Changes" comment="Voluntary modifications for completing the analysis and results">
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/1.5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/1.7222222222222223.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/1.9444444444444444.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/2.1666666666666665.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/2.388888888888889.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/2.611111111111111.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/2.833333333333333.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/3.0555555555555554.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/3.2777777777777777.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/3.5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/graph.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/result.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Exponente de magnetizacion/critical_exponent.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/corr_first.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/corr_second.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/cv.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/energy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/onsager.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Temperatura critica/critical_temperature.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Temperatura critica/critical_temperature_cv.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/128x128/1.5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/128x128/1.7222222222222223.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/128x128/1.9444444444444444.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/128x128/2.1666666666666665.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_first_onsager.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_first_onsager.npy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_first_onsager.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_first_onsager.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_second_onsager.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_second_onsager.npy" afterDir="false" />
@@ -25,11 +34,10 @@
       <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/cv_onsager.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/cv_onsager.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/e_onsager.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/e_onsager.npy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/e_onsager.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/e_onsager.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mi_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mi_log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vol/analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vol/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vol/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/file_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/modules/analisis_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/modules/analisis_module.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vol/modules/correlation_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/modules/correlation_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vol/modules/mag_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/modules/mag_module.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vol/modules/onsager_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/modules/onsager_module.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vol/sim_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/sim_results.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vol/vol_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/vol_main.py" afterDir="false" />
@@ -99,7 +107,7 @@
       <recent name="C:\Users\euget\Downloads\Fisica Computacional\P2 - Modelo de Ising\Proyecto P2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.vol">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Proyecto P2" />
       <option name="ENV_FILES" value="" />
@@ -153,7 +161,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
+        <option value="bundled-python-sdk-48aec45f0201-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17011.127" />
       </set>
     </attachedChunks>
   </component>
@@ -270,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716054951966</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Voluntary modifications for completing the analysis and results">
+      <option name="closed" value="true" />
+      <created>1717014929809</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1717014929809</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -287,6 +303,7 @@
     <MESSAGE value="Some modifications of the voluntary exercise" />
     <MESSAGE value="Added supercomputer simulations results" />
     <MESSAGE value="Voluntary exercise first code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Voluntary exercise first code" />
+    <MESSAGE value="Voluntary modifications for completing the analysis and results" />
+    <option name="LAST_COMMIT_MESSAGE" value="Voluntary modifications for completing the analysis and results" />
   </component>
 </project>

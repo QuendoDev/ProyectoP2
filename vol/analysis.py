@@ -29,13 +29,16 @@ def corr_length(corr):
 
 
 def mag_exp(reduced_T, alpha, beta, gamma):
-    return alpha * (-reduced_T) ** (-beta) + gamma
+    return alpha * reduced_T ** (-beta) + gamma
 
 
 def critical_exponent(m, Tc):
     reduced_T = np.zeros(len(cts.T))
     for i in range(len(cts.T)):
-        reduced_T[i] = np.abs((cts.T[i] - Tc) / Tc)
+        if cts.T[i] == Tc:
+            reduced_T[i] = 0.0001
+        else:
+            reduced_T[i] = np.abs((cts.T[i] - Tc) / Tc)
     popt, pcov = curve_fit(mag_exp, reduced_T, m)
     perr = np.sqrt(np.diag(pcov))
     return popt[1], perr[1]

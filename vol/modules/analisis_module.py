@@ -34,16 +34,24 @@ def onsager(result_path):
 
     for i in range(len(cte.N)):
         # Ploteo los valores de la simulacion.
-        ax_energy.plot(cte.T, sr.E[i], 'o-', label='N = ' + str(cte.N[i]), color=cte.COLORS[i])
-        ax_cv.plot(cte.T, sr.c[i], 'o-', label='N = ' + str(cte.N[i]), color=cte.COLORS[i])
-        ax_corr_first.plot(cte.T, sr.fcorr0[i], 'o-', label='N = ' + str(cte.N[i]), color=cte.COLORS[i])
-        ax_corr_second.plot(cte.T, sr.fcorr1[i], 'o-', label='N = ' + str(cte.N[i]), color=cte.COLORS[i])
+        ax_energy.plot(cte.T, sr.E[i], 'o-', label='N = ' + str(cte.N[i]), color=cte.COLORS[i],
+                       markersize=3)
+        ax_cv.plot(cte.T, sr.c[i], 'o-', label='N = ' + str(cte.N[i]), color=cte.COLORS[i],
+                   markersize=3)
+        ax_corr_first.plot(cte.T, sr.fcorr0[i], 'o-', label='N = ' + str(cte.N[i]), color=cte.COLORS[i],
+                           markersize=3)
+        ax_corr_second.plot(cte.T, sr.fcorr1[i], 'o-', label='N = ' + str(cte.N[i]), color=cte.COLORS[i],
+                            markersize=3)
 
     # Ploteo los valores de Onsager.
-    ax_energy.plot(cte.T, E_inf, 'o-', label='Onsager', color='y')
-    ax_cv.plot(cte.T, Cv_inf, 'o-', label='Onsager', color='y')
-    ax_corr_first.plot(cte.T, corr_first_inf, 'o-', label='Onsager', color='y')
-    ax_corr_second.plot(cte.T, corr_second_inf, 'o-', label='Onsager', color='y')
+    ax_energy.plot(cte.T, E_inf, 'o-', label='Onsager', color='y',
+                   markersize=3)
+    ax_cv.plot(cte.T, Cv_inf, 'o-', label='Onsager', color='y',
+               markersize=3)
+    ax_corr_first.plot(cte.T, corr_first_inf, 'o-', label='Onsager', color='y',
+                       markersize=3)
+    ax_corr_second.plot(cte.T, corr_second_inf, 'o-', label='Onsager', color='y',
+                        markersize=3)
 
     # Pongo los ejes de cada grafico.
     ax_energy.set_xlabel('T')
@@ -95,16 +103,29 @@ def critical_temperature(result_path, max_T_cv):
     fig, axs = plt.subplots(1, 2, figsize=(15, 5))
     fig.suptitle('Temperatura crítica y calor específico máximo', fontsize=20)
 
+    Cv_inf = np.load(os.path.join(os.path.join(result_path, 'Analisis', 'Onsager'), 'cv_onsager.npy'))
+    max_Cv = np.max(Cv_inf)
+    max_T = cte.T[np.where(Cv_inf == max_Cv)[0][0]]
+
     axs[0].plot(cte.N, max_T_cv[0], 'o-', label='Tc')
     axs[0].axhline(y=cte.T_c_onsager, color='r', linestyle='--', label='Tc teórico')
+    axs[0].axhline(y=max_T, color='g', linestyle='--', label='Tc Onsager')
     axs[0].set_title('Temperatura crítica')
     axs[0].set_xlabel('N')
+    axs[0].set_xticks(cte.N)
     axs[0].set_ylabel('Tc')
+    axs[0].legend()
+
+    cv_onsager = an.heat_onsager(cte.T_c_onsager-0.001)
 
     axs[1].plot(cte.N, max_T_cv[1], 'o-', label='Cv')
+    axs[1].axhline(y=cv_onsager, color='r', linestyle='--', label='Cv teórico - 0.001')
+    axs[1].axhline(y=max_Cv, color='g', linestyle='--', label='Cv Onsager')
     axs[1].set_title('Calor específico máximo')
     axs[1].set_xlabel('N')
+    axs[1].set_xticks(cte.N)
     axs[1].set_ylabel('Cv')
+    axs[1].legend()
 
     # Guardo la figura en la carpeta de resultados.
     fig.savefig(os.path.join(os.path.join(result_path, 'Analisis/Temperatura critica'),
@@ -143,6 +164,7 @@ def critical_exponent(result_path, max_T_cv):
     ax.errorbar(cte.N, beta[:, 0], yerr=beta[:, 1], fmt='o-', label='β')
     ax.axhline(y=cte.beta_t, color='r', linestyle='--', label='β teórico')
     ax.set_xlabel('N')
+    ax.set_xticks(cte.N)
     ax.set_ylabel('β')
 
     # Guardo la figura en la carpeta de resultados.

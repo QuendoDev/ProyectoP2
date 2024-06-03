@@ -82,7 +82,7 @@ def main():
     corr_total[3, 1] = sr.fcorr1[3]
 
     # Generar los valores de correlación para N = [16, 32, 64, 128] y para T = np.linspace(1.5, 3.5, 10) con n workers.
-    with ProcessPoolExecutor(max_workers=8) as executor:
+    with ProcessPoolExecutor(max_workers=10) as executor:
         results = executor.map(calc_corr,
                                product(cts.N, cts.T))
 

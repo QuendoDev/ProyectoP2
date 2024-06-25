@@ -64,10 +64,10 @@ else:
 ########################################################################################################################
 
 # Defino que pasos se quieren realizar.
-ONSAGER = True
-CRITICAL_TEMPERATURE = True
-CRITICAL_EXPONENT = True
-CORRELATION = False
+ONSAGER = False
+CRITICAL_TEMPERATURE = False
+CRITICAL_EXPONENT = False
+CORRELATION = True
 
 ########################################################################################################################
 # 1. Describir el comportamiento de las anteriores magnitudes para el rango de temperaturas y tamaños. Comparar

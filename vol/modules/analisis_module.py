@@ -13,11 +13,10 @@ import vol.sim_results as sr
 # con el resultado exácto de Onsager. Describir el efecto del tamaño en cada una de las variables.
 ########################################################################################################################
 def onsager(result_path):
+    T = cte.T_ext.copy()
+
     # Obtengo los resultados de Onsager del archivo Resultados/Voluntario/Analisis/Onsager/magnitud_onsager.npy.
-    E_inf = np.load(os.path.join(os.path.join(result_path, 'Analisis', 'Onsager'), 'e_onsager.npy'))
     Cv_inf = np.load(os.path.join(os.path.join(result_path, 'Analisis', 'Onsager'), 'cv_onsager.npy'))
-    corr_first_inf = np.load(os.path.join(os.path.join(result_path, 'Analisis', 'Onsager'), 'corr_first_onsager.npy'))
-    corr_second_inf = np.load(os.path.join(os.path.join(result_path, 'Analisis', 'Onsager'), 'corr_second_onsager.npy'))
 
     # Genero un grafico para cada magnitud ploteando los valores de la simulacion (para cada N) y los valores de
     # Onsager. Los resultados de la simulacion estan almacenados en sim_results.py con un formato de array de arrays
@@ -44,26 +43,24 @@ def onsager(result_path):
                             markersize=3)
 
     # Ploteo los valores de Onsager.
-    ax_energy.plot(cte.T, E_inf, 'o-', label='Onsager', color='y',
-                   markersize=3)
-    ax_cv.plot(cte.T, Cv_inf, 'o-', label='Onsager', color='y',
+    ax_cv.plot(T, Cv_inf, '-', label='Onsager', color='y',
                markersize=3)
-    ax_corr_first.plot(cte.T, corr_first_inf, 'o-', label='Onsager', color='y',
-                       markersize=3)
-    ax_corr_second.plot(cte.T, corr_second_inf, 'o-', label='Onsager', color='y',
-                        markersize=3)
 
     # Pongo los ejes de cada grafico.
     ax_energy.set_xlabel('T')
+    ax_energy.set_xticks(cte.T)
     ax_energy.set_ylabel('Energia')
 
     ax_cv.set_xlabel('T')
+    ax_cv.set_xticks(cte.T)
     ax_cv.set_ylabel('Calor especifico')
 
     ax_corr_first.set_xlabel('T')
+    ax_corr_first.set_xticks(cte.T)
     ax_corr_first.set_ylabel('Correlacion')
 
     ax_corr_second.set_xlabel('T')
+    ax_corr_second.set_xticks(cte.T)
     ax_corr_second.set_ylabel('Correlacion')
 
     # Añado las leyendas a los graficos.
@@ -90,8 +87,7 @@ def onsager(result_path):
     plt.show()
 
     # Guardo los resultados de Onsager en un archivo de texto.
-    rm.onsager_results(E_inf, Cv_inf, corr_first_inf, corr_second_inf, os.path.join(result_path,
-                                                                                    'Analisis/Onsager vs Exp'))
+    rm.onsager_results(Cv_inf, os.path.join(result_path, 'Analisis/Onsager vs Exp'))
 
 
 ########################################################################################################################
@@ -105,7 +101,7 @@ def critical_temperature(result_path, max_T_cv):
 
     Cv_inf = np.load(os.path.join(os.path.join(result_path, 'Analisis', 'Onsager'), 'cv_onsager.npy'))
     max_Cv = np.max(Cv_inf)
-    max_T = cte.T[np.where(Cv_inf == max_Cv)[0][0]]
+    max_T = cte.T_ext[np.where(Cv_inf == max_Cv)[0][0]]
 
     axs[0].plot(cte.N, max_T_cv[0], 'o-', label='Tc')
     axs[0].axhline(y=cte.T_c_onsager, color='r', linestyle='--', label='Tc teórico')
@@ -116,10 +112,10 @@ def critical_temperature(result_path, max_T_cv):
     axs[0].set_ylabel('Tc')
     axs[0].legend()
 
-    cv_onsager = an.heat_onsager(cte.T_c_onsager-0.001)
+    cv_onsager = an.heat_onsager(cte.T_c_onsager-0.0015)
 
     axs[1].plot(cte.N, max_T_cv[1], 'o-', label='Cv')
-    axs[1].axhline(y=cv_onsager, color='r', linestyle='--', label='Cv teórico - 0.001')
+    axs[1].axhline(y=cv_onsager, color='r', linestyle='--', label='Cv teórico - 0.0015')
     axs[1].axhline(y=max_Cv, color='g', linestyle='--', label='Cv Onsager')
     axs[1].set_title('Calor específico máximo')
     axs[1].set_xlabel('N')
@@ -146,11 +142,6 @@ def critical_exponent(result_path, max_T_cv):
     # Cargo los valores de la magnetización de la simulación desde el archivo guardado con el mag_module.py con ruta
     # Resultado/Voluntario/Analisis/Datos/mag.npy
     m = np.load(os.path.join(os.path.join(result_path, 'Analisis', 'Datos'), 'mag.npy'))
-
-    # Para cada valor de magnetizacion, debo dividirlo entre N ** 2 ya que a la hora de realizar la simulacion no fue
-    # dividido por N ** 2, y para poder comparar con el valor teorico, debo dividirlo.
-    for i in range(len(cte.N)):
-        m[i] /= cte.N[i] ** 2
 
     # Calculo el exponente crítico de la magnetización para cada N.
     beta = np.zeros((len(cte.N), 2))
@@ -199,12 +190,13 @@ def correlation(result_path, max_T_cv):
         for j in range(len(cte.T)):
             xi[i, j, 0], xi[i, j, 1] = an.corr_length(corr[i, :, j])
 
+
     # Para cada N, ploteo la longitud de correlación en función de la temperatura.
     fig, axs = plt.subplots(2, 2, figsize=(15, 15))
     fig.suptitle('Longitud de correlación', fontsize=20)
 
     for i in range(len(cte.N)):
-        axs[i // 2, i % 2].errorbar(cte.T, xi[i, :, 0], y_err=xi[i, :, 1], fmt='o-', label='N = ' + str(cte.N[i]))
+        axs[i // 2, i % 2].errorbar(cte.T, xi[i, :, 0], yerr=xi[i, :, 1], fmt='o-', label='N = ' + str(cte.N[i]))
         axs[i // 2, i % 2].set_title('N = ' + str(cte.N[i]))
         axs[i // 2, i % 2].set_xlabel('T')
         axs[i // 2, i % 2].set_ylabel('Longitud de correlación')
@@ -235,6 +227,7 @@ def correlation(result_path, max_T_cv):
     ax.errorbar(cte.N, eta[:, 0], yerr=eta[:, 1], fmt='o-', label='η')
     ax.axhline(y=cte.eta_t, color='r', linestyle='--', label='η teórico')
     ax.set_xlabel('N')
+    ax.set_xticks(cte.N)
     ax.set_ylabel('η')
 
     # Guardo la figura en la carpeta de resultados.

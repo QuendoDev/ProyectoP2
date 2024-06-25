@@ -4,42 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31148482-e1ae-4676-a5fa-319867f89b10" name="Changes" comment="Voluntary modifications for completing the analysis and results">
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/1.5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/1.7222222222222223.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/1.9444444444444444.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/2.1666666666666665.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/2.388888888888889.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/2.611111111111111.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/2.833333333333333.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/3.0555555555555554.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/3.2777777777777777.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/3.5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/graph.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/128x128/result.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Exponente de magnetizacion/critical_exponent.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/corr_first.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/corr_second.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/cv.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/energy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/onsager.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Temperatura critica/critical_temperature.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Temperatura critica/critical_temperature_cv.jpg" afterDir="false" />
+    <list default="true" id="31148482-e1ae-4676-a5fa-319867f89b10" name="Changes" comment="Finished first simulation, finished simulation results and ran first analysis">
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Correlacion/correlation.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Correlacion/correlation_exponent.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Correlacion/correlation_length.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Datos/corr.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Datos/corr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Proyecto P2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Proyecto P2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_first_onsager.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_first_onsager.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_first_onsager.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_first_onsager.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_second_onsager.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_second_onsager.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_second_onsager.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_second_onsager.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Exponente de magnetizacion/critical_exponent.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Exponente de magnetizacion/critical_exponent.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Exponente de magnetizacion/critical_exponent.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Exponente de magnetizacion/critical_exponent.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/corr_first.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/corr_first.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/corr_second.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/corr_second.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/cv.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/cv.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/energy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/energy.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/onsager.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/onsager.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_first_onsager.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_first_onsager.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_second_onsager.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_second_onsager.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/cv_onsager.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/cv_onsager.npy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/cv_onsager.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/cv_onsager.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/e_onsager.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/e_onsager.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/e_onsager.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/e_onsager.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mi_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mi_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/e_onsager.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/e_onsager.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Temperatura critica/critical_temperature_cv.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Temperatura critica/critical_temperature_cv.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vol/analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/file_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vol/modules/analisis_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/modules/analisis_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vol/modules/correlation_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/modules/correlation_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/modules/mag_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/modules/mag_module.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vol/modules/onsager_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/modules/onsager_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vol/sim_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/sim_results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/results_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/results_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vol/vol_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/vol_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,23 +77,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.ajuste.executor&quot;: &quot;Run&quot;,
-    &quot;Python.analysis.executor&quot;: &quot;Run&quot;,
-    &quot;Python.mag_module.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.onsager_module.executor&quot;: &quot;Run&quot;,
-    &quot;Python.results_manager.executor&quot;: &quot;Run&quot;,
-    &quot;Python.vol.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/euget/Downloads/Fisica Computacional/P2 - Modelo de Ising/Proyecto P2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.ajuste.executor": "Run",
+    "Python.analysis.executor": "Run",
+    "Python.mag_module.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.onsager_module.executor": "Run",
+    "Python.results_manager.executor": "Run",
+    "Python.vol.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/euget/OneDrive/Escritorio/Fisica Computacional/P2 - Modelo de Ising/Proyecto P2",
+    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\euget\Downloads\Fisica Computacional\P2 - Modelo de Ising\Proyecto P2\vol" />
@@ -139,7 +133,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (Proyecto P2)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -161,7 +154,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-48aec45f0201-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17011.127" />
+        <option value="bundled-python-sdk-5b207ade9991-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17890.14" />
       </set>
     </attachedChunks>
   </component>
@@ -286,7 +279,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717014929809</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Finished first simulation, finished simulation results and ran first analysis">
+      <option name="closed" value="true" />
+      <created>1717405317493</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1717405317493</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Finished first simulation, finished simulation results and ran first analysis">
+      <option name="closed" value="true" />
+      <created>1717405325937</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1717405325937</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -304,6 +313,7 @@
     <MESSAGE value="Added supercomputer simulations results" />
     <MESSAGE value="Voluntary exercise first code" />
     <MESSAGE value="Voluntary modifications for completing the analysis and results" />
-    <option name="LAST_COMMIT_MESSAGE" value="Voluntary modifications for completing the analysis and results" />
+    <MESSAGE value="Finished first simulation, finished simulation results and ran first analysis" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished first simulation, finished simulation results and ran first analysis" />
   </component>
 </project>

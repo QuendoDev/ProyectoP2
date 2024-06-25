@@ -12,7 +12,6 @@ def magnetization(s, N):
     return np.abs(s.sum()) / N ** 2
 
 
-#TODO mean / N**2
 def calc_mag(args):
     N, t = args
     mag = np.zeros(cts.CYCLES // cts.STEP)

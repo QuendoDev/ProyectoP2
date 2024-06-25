@@ -1,7 +1,7 @@
 import os
 import vol.constants as cte
 
-direction = 'C:/Users/euget/Downloads/Fisica Computacional/P2 - Modelo de Ising/Proyecto P2'
+direction = 'C:/Users/euget/OneDrive/Escritorio/Fisica Computacional/P2 - Modelo de Ising/Proyecto P2'
 result_name = 'Resultado'
 vol_name = 'Voluntario'
 

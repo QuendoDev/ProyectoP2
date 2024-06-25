@@ -70,7 +70,7 @@ def critical_temperature_results(max_T_cv, path):
         f.write('\n----------------------------------------------------------------\n')
 
 
-def onsager_results(E_inf, Cv_inf, corr_first_inf, corr_second_inf, path):
+def onsager_results(Cv_inf, path):
     name = "onsager.txt"
 
     with open(os.path.join(path, name), 'w') as f:
@@ -80,17 +80,8 @@ def onsager_results(E_inf, Cv_inf, corr_first_inf, corr_second_inf, path):
         f.write('\nTemperaturas utilizadas:\n')
         np.savetxt(f, cte.T, fmt='%f')
         f.write('\n----------------------------------------------------------------\n')
-        f.write('\nEnergia de Onsager:\n')
-        np.savetxt(f, E_inf, fmt='%f')
-        f.write('\n----------------------------------------------------------------\n')
         f.write('\nCalor especifico de Onsager:\n')
         np.savetxt(f, Cv_inf, fmt='%f')
-        f.write('\n----------------------------------------------------------------\n')
-        f.write('\nFuncion de correlacion para i = ' + str(cte.i[0]) + ':\n')
-        np.savetxt(f, corr_first_inf, fmt='%f')
-        f.write('\n----------------------------------------------------------------\n')
-        f.write('\nFuncion de correlacion para i = ' + str(cte.i[1]) + ':\n')
-        np.savetxt(f, corr_second_inf, fmt='%f')
         f.write('\n----------------------------------------------------------------\n')
 
 

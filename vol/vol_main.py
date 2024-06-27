@@ -206,8 +206,8 @@ else:
 """
 # Make the calculation and analysis of the correlation length and its characteristic critical exponent.
 if st.CORRELATION:
-    print('Empezando analisis de longitud de correlación y exponente crítico de la función de correlación')
+    print('Starting analysis of correlation length and exponent of the correlation function')
     an_mod.correlation(corr, max_T_cv)
-    print('Finalizado analisis de longitud de correlación y exponente crítico de la función de correlación')
+    print('Finished analysis of correlation length and exponent of the correlation function')
 else:
-    print('Omitiendo analisis de longitud de correlación y exponente crítico de la función de correlación')
+    print('Omitting analysis of correlation length and exponent of the correlation function')

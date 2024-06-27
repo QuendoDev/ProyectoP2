@@ -4,8 +4,8 @@ from concurrent.futures import ProcessPoolExecutor
 from itertools import product
 import os
 
-import vol.constants as cts
-import vol.algorithms as alg
+import vol.setup.constants as cts
+import vol.calc.algorithms as alg
 
 
 def magnetization(s, N):

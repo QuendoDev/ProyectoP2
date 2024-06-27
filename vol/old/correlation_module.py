@@ -4,9 +4,9 @@ from concurrent.futures import ProcessPoolExecutor
 from itertools import product
 import os
 
-import vol.constants as cts
-import vol.algorithms as alg
-import vol.sim_results as sr
+import vol.setup.constants as cts
+import vol.calc.algorithms as alg
+import vol.old.sim_results as sr
 
 
 def sum_correlation(s, i, N):

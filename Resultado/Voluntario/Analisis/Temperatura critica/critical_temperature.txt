@@ -1,10 +1,10 @@
 ----------------------------------------------------------------
 
-Información sobre la temperatura crítica:
+Critical temperature information:
 
 ----------------------------------------------------------------
 
-Tamaños utilizados:
+Used sizes:
 16.000000
 32.000000
 64.000000
@@ -12,12 +12,17 @@ Tamaños utilizados:
 
 ----------------------------------------------------------------
 
-Temperatura de Onsager (teorica):
+Onsager temperature (theoretical):
 2.269185314213022
 
 ----------------------------------------------------------------
 
-Temperaturas críticas:
+Heat capacity at Onsager temperature (theoretical):
+2.8003675785155475
+
+----------------------------------------------------------------
+
+Critical temperatures:
 2.388889
 2.388889
 2.388889
@@ -25,10 +30,20 @@ Temperaturas críticas:
 
 ----------------------------------------------------------------
 
-Calores especificos maximos:
+Maximum specific heats:
 3.458860
 3.261873
 2.825820
 2.845576
+
+----------------------------------------------------------------
+
+Critical temperature of the analytic representation:
+2.2676767676767677
+
+----------------------------------------------------------------
+
+Maximum specific heat of the analytic representation:
+2.797557847435689
 
 ----------------------------------------------------------------

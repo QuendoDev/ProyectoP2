@@ -1,38 +1,33 @@
 import os
-
-import matplotlib.pyplot as plt
 import numpy as np
 
-import vol.analysis as an
-import vol.constants as cts
+import vol.calc.analysis as an
+import vol.setup.constants as cts
 
-# Generar los valores de Onsager para T_ext = np.linspace(1.5, 3.5, 100) y guardarlos en un archivo en
-# Resultados/Voluntario/Analisis/Onsager/magnitud_onsager.txt o en
-# Resultados/Voluntario/Analisis/Onsager/magnitud_onsager.npy.
+"""
+data function
+It generates the values for the heat capacity of the Ising model using the Onsager exact representation. It saves the
+values in a .txt file and a .npy file in the 'data' directory.
 
-# En las graficas, se ploteara una linea para los valores de T_ext y luego otra para los valores de T, pero como solo
-# se van a hacer los calculos con la dimension de T_ext, para plotear la de T se tomaran datos de 10 pasos en 10
-# pasos de T_ext.
+Parameters
+----------
+T : numpy array
+    Temperatures to calculate the heat capacity.
+"""
 
-ons_dir = ('C:/Users/euget/OneDrive/Escritorio/Fisica Computacional/P2 - Modelo de Ising/Proyecto P2/Resultado/Voluntario/'
-           'Analisis/Onsager')
 
-T = cts.T_ext.copy()
+def data(T):
+    # Path for the directory to save the data.
+    ons_dir = cts.DATA_PATH
 
-Cv_inf = np.zeros(len(T))
+    # Array to save the values of the heat capacity.
+    Cv_inf = np.zeros(len(T))
 
-for i in range(len(T)):
-    Cv_inf[i] = an.heat_onsager(T[i])
+    # Calculation of the heat capacity for each temperature.
+    for i in range(len(T)):
+        Cv_inf[i] = an.heat_onsager(T[i])
 
-np.savetxt(os.path.join(ons_dir, 'cv_onsager.txt'), Cv_inf)
+    # Save the values of the heat capacity in a .txt file and a .npy file.
+    np.savetxt(os.path.join(ons_dir, 'cv_onsager.txt'), Cv_inf)
+    np.save(os.path.join(ons_dir, 'cv_onsager.npy'), Cv_inf)
 
-np.save(os.path.join(ons_dir, 'cv_onsager.npy'), Cv_inf)
-
-# Ploteo los valores de Onsager para T = np.linspace(1.5, 3.5, 10) para cada magnitud en subplots.
-fig, ax = plt.subplots()
-ax.plot(T, Cv_inf)
-ax.set_title('Capacidad calorífica')
-ax.set_xlabel('T')
-ax.set_ylabel('Cv')
-plt.tight_layout()
-plt.show()

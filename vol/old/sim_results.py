@@ -3,6 +3,9 @@
 # para la funcion de correlacion i = [1, 3].
 
 import numpy as np
+import os
+
+import vol.setup.constants as cte
 
 E = np.array([
     # N = 16
@@ -63,3 +66,36 @@ fcorr1 = np.array([
     [0.973292138671875, 0.9363243408203125, 0.863441015625, 0.7084792236328125, 0.3466463623046875,
      0.203462353515625, 0.132902197265625, 0.0919744140625, 0.0666431396484375, 0.049748974609375]
 ])
+
+
+# Voy a guardar esto y los valores de Onsager y de la funcion de correlacion que faltan en un archivo .npy para
+# adaptar el codigo de la segunda parte de vol_main.py a estos valores, ya que este archivo solo se usó para
+# realizar el informe del ejercicio y no será lo que se entregue. Primero cargo los datos de magnetizacion y correlacion
+# extra que se generaron en cte.ANALYSIS_PATH/Datos y finalmente guardo todos los datos juntos en un archivo .npy para
+# cada N y cada T en cte.DATA_PATH.
+def format_data():
+    mag = np.load(os.path.join(cte.ANALYSIS_PATH, 'Datos', 'mag.npy'))
+    print('mag', mag, mag.shape)
+    corr = np.load(os.path.join(cte.ANALYSIS_PATH, 'Datos', 'corr.npy'))
+    print('corr', corr, corr.shape)
+
+    print('E', E.shape)
+    print('c', c.shape)
+    print('fcorr0', fcorr0.shape)
+    print('fcorr1', fcorr1.shape)
+
+    # Creo un array para cada N y cada T con los valores de magnetizacion, energia, calor especifico y correlaciones.
+    for N in range(len(cte.N)):
+        Ne = cte.N[N]
+        for T in range(len(cte.T)):
+            Te = cte.T[T]
+            result = np.array([mag[N][T], E[N][T], c[N][T], fcorr0[N][T], fcorr1[N][T], corr[N][2][T], corr[N][3][T]])
+            np.save(os.path.join(cte.DATA_PATH, f'{Ne}_{Te}.npy'), result)
+
+    # Leo e imprimo los datos guardados para verificar que funcionó correctamente.
+    for N in range(len(cte.N)):
+        Ne = cte.N[N]
+        for T in range(len(cte.T)):
+            Te = cte.T[T]
+            result = np.load(os.path.join(cte.DATA_PATH, f'{Ne}_{Te}.npy'))
+            print(f'{Ne}_{Te}.npy', result, result.shape)

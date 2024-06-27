@@ -1,125 +1,213 @@
+import os
+from concurrent.futures import ProcessPoolExecutor
+from itertools import product
 import numpy as np
 
-import vol.analysis as an
-import vol.constants as cte
-import vol.file_manager as fm
+import vol.setup.constants as cte
+import vol.setup.settings as st
+import vol.managers.file_manager as fm
+import vol.calc.analysis as an
 import vol.modules.analisis_module as an_mod
+import vol.modules.onsager_module as ons_mod
 import vol.modules.simulation_module as sim_mod
 
+"""
+We want to calculate a list of parameters for each N in [16, 32, 64, 128], representing for each temperature in 
+[1.5, 3.5] with 10 values. The parameters we want to calculate are:
+- The average magnetization
+- The average energy
+- The specific heat
+- The correlation function
+
+For this, an initial configuration of all ordered spins (s[i, j] = 1 for any i, j) is generated, and the system is 
+allowed to evolve 1000000 cycles, saving the results every 100 cycles. Each result is saved in a position of the array
+corresponding to the parameter being calculated and at the end of the loop, the mean of that array is taken to obtain
+the average value of that parameter. If any further calculation using scalars or constants is needed at the end of the
+formula to obtain the final value that is requested, it is done at the end of the loop to save calculations.
+
+Finally, the results are saved in a text file with the name of the parameters that have been calculated and the
+corresponding graphs are generated.
+
+The professor has pointed out that the magnetization does not need to be included since it was included in the
+mandatory part, but in the analysis that needs to be done in the second part of the voluntary, it is requested that an
+analysis of the critical exponent of this be done, so a module has been created to calculate it by parallelization to
+reduce the calculation time, since the simulation as such was started without this last calculation, and due to the
+available time, a complete simulation with this calculation included has not been possible, but a separate one has been
+done with this method in order to be able to do the analysis of the second part of the voluntary.
+
+In the delivered code, the calculation of the magnetization and correlation function for i = {5, 7} is included, but
+in the simulation made for the document, those parameters were calculated in other modules. For making the code more
+readable, the calculation of the magnetization and correlation function for i = {5, 7} has been removed from those
+modules and included in the simulation module, so that all the calculations are done in the same module and it is only
+necessary to call the simulation module to obtain all the results.
+"""
+
+"""
 ########################################################################################################################
-# Se quieren calcular una lista de parametros para cada N en [16, 32, 64, 128], representando para cada temperatura
-# en [1.5, 3.5] con 10 valores. Los parametros que se quieren calcular son:
-# - La magnetizacion promedio
-# - La energia media
-# - El calor especifico
-# - La funcion de correlacion
+INSTRUCTIONS FOR RUNNING THE CODE:
+1. Change the path in the constants.py file to the path where the results will be saved.
+2. Modify the settings.py file to set the parameters of the simulation and the analysis that will be done.
+3. Modify the values of the constants in the constants.py file to change the parameters of the simulation and the
+    analysis that will be done, such as the posible sizes of the lattice, the temperatures to simulate, the temperatures
+    used in the Onsager exact representation, the values of i for the correlation function, and the colors for the plots
+    of the parameters.
+4. Run the code.
 
-# Para esto, se genera una configuracion inicial de espines todos ordenadors (s[i, j] = 1 para cualquier i, j), y se
-# deja evolucionar el sistema 1000000 ciclos, guardando los resultados cada 100 ciclos. Cada resultado se guarda en una
-# posicion del array correspondiente al parametro que se esta calculando y al final del bucle, se le hace la media a ese
-# array para obtener el valor promedio de ese parametro. Si hay que hacer algun calculo mas usando escalares o ctes
-# al final de la formula para obtener el valor final que se pide, se hace al finalizar el bucle para ahorrar calculos.
-
-# Por ultimo, se guardan los resultados en un archivo de texto con el nombre de los parametros que se han calculado y se
-# generan las graficas correspondientes.
-
-# El profesor ha puntualizado que la magnetizacion no hay que ponerla ya que estaba incluida en el obligatorio, pero en
-# el analisis que hay que hacer en la segunda parte del voluntario, se pide que se haga un analisis del exponente
-# critico de esta, por lo que se ha creado un modulo para calcularla mediante paralelizacion para reducir el tiempo
-# de calculo, ya que la simulacion como tal se empezo sin este ultimo calculo, y debido al tiempo disponible
-# no se ha podido hacer una simulacion completa con este calculo incluido, sino que se ha hecho aparte con este
-# metodo para poder hacer el analisis de la segunda parte del voluntario.
+!!! IMPORTANT !!!
+If the simulation is going to be done, the run time of the code is going to be long, since the simulation is done for
+each N and T, and the calculation of the parameters is done for each N and T. The simulation is done in parallel to
+reduce the calculation time, but it is still going to take a long time. If the simulation is not going to be done, the
+results are loaded from the .npy files, so the run time is going to be shorter. Be careful with the number of workers
+used in the parallelization, since it can cause the computer to freeze if the number of workers is too high.
 ########################################################################################################################
+"""
 
+"""
 ########################################################################################################################
-# Principio de la primera parte del ejercicio voluntario, la simulacion de los parametros para cada N y T.
+Start of the first part of the voluntary exercise, the simulation of the parameters for each N and T.
 ########################################################################################################################
+"""
 
-# Genero las carpetas de resultados.
-result_path = fm.init_files()
+# Generate the folders for the results.
+fm.init_files()
 
-# Defino si se quieren hacer los calculos de las medias de los parametros.
-PROMS = False
+# Variables to store the results of the simulation.
+mag = np.zeros((len(cte.N), len(cte.T)))
+en = np.zeros((len(cte.N), len(cte.T)))
+cv = np.zeros((len(cte.N), len(cte.T)))
+corr = np.zeros((len(cte.N), 4, len(cte.T)))
 
-if PROMS:
-    sim_mod.sim(result_path)
+# If the simulation is going to be done, the simulation module is called to calculate the parameters for each N and T,
+# and the results are saved in a .npy file. If the simulation is not going to be done, the results are loaded from the
+# .npy file.
+if st.SIMULATE:
+    print('Starting simulation of parameters for each N and T')
+    with ProcessPoolExecutor(max_workers=st.MAX_WORKERS) as executor:
+        results = executor.map(sim_mod.sim,
+                               product(cte.N, cte.T))
+
+    for result in results:
+        Nr, Tr, mag_tr, en_tr, cv_tr, corr1_tr, corr3_tr, corr5_tr, corr7_tr = result
+        mag[np.where(cte.N == Nr)[0], np.where(cte.T == Tr)[0]] = mag_tr
+        en[np.where(cte.N == Nr)[0], np.where(cte.T == Tr)[0]] = en_tr
+        cv[np.where(cte.N == Nr)[0], np.where(cte.T == Tr)[0]] = cv_tr
+        corr[np.where(cte.N == Nr)[0], 0, np.where(cte.T == Tr)[0]] = corr1_tr
+        corr[np.where(cte.N == Nr)[0], 1, np.where(cte.T == Tr)[0]] = corr3_tr
+        corr[np.where(cte.N == Nr)[0], 2, np.where(cte.T == Tr)[0]] = corr5_tr
+        corr[np.where(cte.N == Nr)[0], 3, np.where(cte.T == Tr)[0]] = corr7_tr
+
+    print('Finished simulation of parameters for each N and T')
+
 else:
-    print('Omitiendo calculo de promedios')
+    print('Omitting calculation of averages, taking data from .npy file')
+    for N in cte.N:
+        for T in cte.T:
+            data = np.load(os.path.join(cte.DATA_PATH, f'{N}_{T}.npy'))
+            mag[np.where(cte.N == N)[0], np.where(cte.T == T)[0]] = data[0]
+            en[np.where(cte.N == N)[0], np.where(cte.T == T)[0]] = data[1]
+            cv[np.where(cte.N == N)[0], np.where(cte.T == T)[0]] = data[2]
+            corr[np.where(cte.N == N)[0], 0, np.where(cte.T == T)[0]] = data[3]
+            corr[np.where(cte.N == N)[0], 1, np.where(cte.T == T)[0]] = data[4]
+            corr[np.where(cte.N == N)[0], 2, np.where(cte.T == T)[0]] = data[5]
+            corr[np.where(cte.N == N)[0], 3, np.where(cte.T == T)[0]] = data[6]
 
-########################################################################################################################
-# Fin de la primera parte del ejercicio voluntario.
-########################################################################################################################
+# Generate the graphics for the simulation if there is at least one parameter to be graphed.
+if np.any(st.SIMULATION_GRAPHICS):
+    print('Starting generation of graphics for the simulation')
+    sim_mod.simulation_graphs(st.SIMULATION_GRAPHICS, mag, en, cv, corr)
+    print('Finished generation of graphics for the simulation')
 
+"""
+########################################################################################################################
+# End of the first part of the voluntary exercise, the simulation of the parameters for each N and T.
+########################################################################################################################
+"""
 
+"""
 ########################################################################################################################
-# Para la segunda parte del ejercicio voluntario, se hará un análisis de la simulación basada en 5 partes:
-# 1. Describir el comportamiento de las anteriores magnitudes para el rango de temperaturas y tamaños. Comparar
-#    con el resultado exácto de Onsager. Describir el efecto del tamaño en cada una de las variables.
-# 2. Obtener de la literatura información sobre exponentes críticos y teoría de tamaño finito.
-# 3. Estimar el valor del punto crítico: Para cada valor de N obtener una estimación del máximo del calor específico,
-#    Tc(N), y estudiar su comportamiento con N extrapolando para N -> inf.
-# 4. Obtener numéricamente el exponente crítico β de la magnetización y comparar con el resultado exacto.
-# 5. Estudiar de la función f(i) con la temperatura y el tamaño del sistema. Extraer la longitud de correlación y su
-#    exponente crítico característico.
+For the second part of the voluntary exercise, an analysis of the simulation will be made based on 5 parts:
+1. Describe the behavior of the previous magnitudes for the range of temperatures and sizes. Compare with the exact
+    result of Onsager. Describe the effect of size on each of the variables.
+2. Obtain information from the literature on critical exponents and finite size theory.
+3. Estimate the value of the critical point: For each value of N, obtain an estimate of the maximum of the specific
+    heat, Tc(N), and study its behavior with N extrapolating to N -> inf.
+4. Obtain numerically the critical exponent β of the magnetization and compare with the exact result.
+5. Study the function f(i) with temperature and system size. Extract the correlation length and its characteristic
+    critical exponent.
 ########################################################################################################################
+"""
 
-# Defino que pasos se quieren realizar.
-ONSAGER = False
-CRITICAL_TEMPERATURE = False
-CRITICAL_EXPONENT = False
-CORRELATION = True
+"""
+########################################################################################################################
+1. Describe the behavior of the previous magnitudes for the range of temperatures and sizes. Compare with the exact
+    result of Onsager. Describe the effect of size on each of the variables.
+########################################################################################################################
+"""
+# Generate the data for the Onsager analysis if it is set to be done.
+if st.ONSAGER_DATA:
+    print('Generating Onsager data for the analysis')
+    ons_mod.data(cte.T_ext.copy())
+    print('Finished generating Onsager data for the analysis')
 
-########################################################################################################################
-# 1. Describir el comportamiento de las anteriores magnitudes para el rango de temperaturas y tamaños. Comparar
-# con el resultado exácto de Onsager. Describir el efecto del tamaño en cada una de las variables.
-########################################################################################################################
-if ONSAGER:
-    print('Empezando analisis de magnitudes y comparacion con Onsager')
-    an_mod.onsager(result_path)
-    print('Finalizado analisis de magnitudes y comparacion con Onsager')
+# Make the analysis of the magnitudes and compares them with the exact result of Onsager.
+if st.ONSAGER:
+    print('Starting analysis of magnitudes and comparison with Onsager')
+    an_mod.onsager(en, cv, corr)
+    print('Finished analysis of magnitudes and comparison with Onsager')
 else:
-    print('Omitiendo analisis de magnitudes y comparacion con Onsager')
+    print('Omitting analysis of magnitudes and comparison with Onsager')
 
+"""
 ########################################################################################################################
-# 2. Obtener de la literatura información sobre exponentes críticos y teoría de tamaño finito.
+2. Obtain information from the literature on critical exponents and finite size theory.
 ########################################################################################################################
-# Apartado unicamente teorico, no se realiza ninguna operacion.
+"""
+# This part is only theoretical, no operations are performed.
 
-
+"""
 ########################################################################################################################
-# 3. Estimar el valor del punto crítico: Para cada valor de N obtener una estimación del máximo del calor específico,
-# Tc(N), y estudiar su comportamiento con N extrapolando para N -> inf:
+3. Estimate the value of the critical point: For each value of N, obtain an estimate of the maximum of the specific
+    heat, Tc(N), and study its behavior with N extrapolating to N -> inf.
 ########################################################################################################################
-# Calculo la temperatura crítica y el calor específico máximo para cada N. Hago esto fuera del if porque la temperatura
-# crítica es necesaria para el cálculo del exponente crítico.
+"""
+# Calculate the critical temperature and the maximum specific heat for each N. This is done outside the if because the
+# critical temperature is necessary for the calculation of the critical exponent.
 max_T_cv = np.zeros((2, len(cte.N)))
 for i in range(len(cte.N)):
     max_T_cv[0, i], max_T_cv[1, i] = an.critical_temperature(i)
 
-if CRITICAL_TEMPERATURE:
-    print('Empezando analisis de temperatura crítica y calor específico máximo')
-    an_mod.critical_temperature(result_path, max_T_cv)
-    print('Finalizado analisis de temperatura crítica y calor específico máximo')
+# Make the analysis of the critical temperature and the maximum specific heat for each N. Remember that it compares
+# the critical temperature with the exact value of Onsager, so the Onsager data must be generated before this part.
+if st.CRITICAL_TEMPERATURE:
+    print('Starting analysis of critical temperature and maximum specific heat')
+    an_mod.critical_temperature(max_T_cv)
+    print('Finished analysis of critical temperature and maximum specific heat')
 else:
-    print('Omitiendo analisis de temperatura crítica y calor específico máximo')
+    print('Omitting analysis of critical temperature and maximum specific heat')
 
+"""
 ########################################################################################################################
-# 4. Obtener numéricamente el exponente crítico β de la magnetización y comparar con el resultado exacto.
+4. Obtain numerically the critical exponent β of the magnetization and compare with the exact result.
 ########################################################################################################################
-if CRITICAL_EXPONENT:
-    print('Empezando analisis de exponente crítico de la magnetización')
-    an_mod.critical_exponent(result_path, max_T_cv)
-    print('Finalizado analisis de exponente crítico de la magnetización')
+"""
+# Make the calculation and analysis of the critical exponent of the magnetization.
+if st.CRITICAL_EXPONENT:
+    print('Starting analysis of critical exponent of the magnetization')
+    an_mod.critical_exponent(mag, max_T_cv)
+    print('Finished analysis of critical exponent of the magnetization')
 else:
-    print('Omitiendo analisis de exponente crítico de la magnetización')
+    print('Omitting analysis of critical exponent of the magnetization')
 
+"""
 ########################################################################################################################
-# 5. Estudiar de la función f(i) con la temperatura y el tamaño del sistema. Extraer la longitud de correlación y su
-# exponente crítico característico.
+5. Study the function f(i) with temperature and system size. Extract the correlation length and its characteristic
+    critical exponent.
 ########################################################################################################################
-if CORRELATION:
+"""
+# Make the calculation and analysis of the correlation length and its characteristic critical exponent.
+if st.CORRELATION:
     print('Empezando analisis de longitud de correlación y exponente crítico de la función de correlación')
-    an_mod.correlation(result_path, max_T_cv)
+    an_mod.correlation(corr, max_T_cv)
     print('Finalizado analisis de longitud de correlación y exponente crítico de la función de correlación')
 else:
     print('Omitiendo analisis de longitud de correlación y exponente crítico de la función de correlación')

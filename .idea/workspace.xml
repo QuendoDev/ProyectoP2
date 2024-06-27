@@ -4,14 +4,68 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31148482-e1ae-4676-a5fa-319867f89b10" name="Changes" comment="Finished first simulation, finished simulation results and ran first analysis">
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Correlacion/correlation.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Correlacion/correlation_exponent.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Correlacion/correlation_length.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Datos/corr.npy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Datos/corr.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Proyecto P2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Proyecto P2.iml" afterDir="false" />
+    <list default="true" id="31148482-e1ae-4676-a5fa-319867f89b10" name="Changes" comment="Finished simulations and results. Final commit?">
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/128_1.5.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/128_1.7222222222222223.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/128_1.9444444444444444.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/128_2.1666666666666665.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/128_2.388888888888889.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/128_2.611111111111111.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/128_2.833333333333333.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/128_3.0555555555555554.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/128_3.2777777777777777.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/128_3.5.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/16_1.5.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/16_1.7222222222222223.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/16_1.9444444444444444.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/16_2.1666666666666665.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/16_2.388888888888889.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/16_2.611111111111111.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/16_2.833333333333333.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/16_3.0555555555555554.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/16_3.2777777777777777.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/16_3.5.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/32_1.5.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/32_1.7222222222222223.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/32_1.9444444444444444.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/32_2.1666666666666665.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/32_2.388888888888889.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/32_2.611111111111111.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/32_2.833333333333333.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/32_3.0555555555555554.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/32_3.2777777777777777.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/32_3.5.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/64_1.5.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/64_1.7222222222222223.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/64_1.9444444444444444.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/64_2.1666666666666665.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/64_2.388888888888889.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/64_2.611111111111111.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/64_2.833333333333333.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/64_3.0555555555555554.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/64_3.2777777777777777.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/64_3.5.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/cv_onsager.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resultado/Voluntario/Datos/cv_onsager.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/calc/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/calc/algorithms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/calc/analysis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/calc/vol_params.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/managers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/managers/file_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/managers/results_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/old/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/setup/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/setup/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vol/setup/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Correlacion/correlation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Correlacion/correlation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Correlacion/correlation_exponent.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Correlacion/correlation_exponent.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Correlacion/correlation_length.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Correlacion/correlation_length.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Exponente de magnetizacion/critical_exponent.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Exponente de magnetizacion/critical_exponent.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Exponente de magnetizacion/critical_exponent.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Exponente de magnetizacion/critical_exponent.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/corr_first.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/corr_first.jpg" afterDir="false" />
@@ -19,22 +73,21 @@
       <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/cv.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/cv.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/energy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/energy.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/onsager.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager vs Exp/onsager.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_first_onsager.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_first_onsager.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_second_onsager.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/corr_second_onsager.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/cv_onsager.npy" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/cv_onsager.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/cv_onsager.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/cv_onsager.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/e_onsager.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Onsager/e_onsager.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Temperatura critica/critical_temperature.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Temperatura critica/critical_temperature.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Temperatura critica/critical_temperature_cv.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Resultado/Voluntario/Analisis/Temperatura critica/critical_temperature_cv.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vol/analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vol/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/file_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/algorithms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/analysis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/constants.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/file_manager.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vol/modules/analisis_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/modules/analisis_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vol/modules/mag_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/modules/mag_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/modules/correlation_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/old/correlation_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/modules/mag_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/old/mag_module.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vol/modules/onsager_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/modules/onsager_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vol/results_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/results_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/modules/simulation_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/modules/simulation_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/results_manager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/sim_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/old/sim_results.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vol/vol_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/vol/vol_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vol/vol_params.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +113,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/QuendoDev/ProyectoP2.git&quot;,
-    &quot;accountId&quot;: &quot;21751230-38a1-45fc-92e6-e4c69bbd5336&quot;
+    &quot;accountId&quot;: &quot;b67114ca-51a1-4cc2-afa2-404d0c1829cb&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -82,10 +135,12 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Python.ajuste.executor": "Run",
     "Python.analysis.executor": "Run",
+    "Python.constants.executor": "Run",
     "Python.mag_module.executor": "Run",
     "Python.main.executor": "Run",
     "Python.onsager_module.executor": "Run",
     "Python.results_manager.executor": "Run",
+    "Python.sim_results.executor": "Run",
     "Python.vol.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -96,9 +151,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\euget\OneDrive\Escritorio\Fisica Computacional\P2 - Modelo de Ising\Proyecto P2\vol\calc" />
+      <recent name="C:\Users\euget\OneDrive\Escritorio\Fisica Computacional\P2 - Modelo de Ising\Proyecto P2\vol\managers" />
+      <recent name="C:\Users\euget\OneDrive\Escritorio\Fisica Computacional\P2 - Modelo de Ising\Proyecto P2\vol\setup" />
+      <recent name="C:\Users\euget\OneDrive\Escritorio\Fisica Computacional\P2 - Modelo de Ising\Proyecto P2\vol\old" />
       <recent name="C:\Users\euget\Downloads\Fisica Computacional\P2 - Modelo de Ising\Proyecto P2\vol" />
-      <recent name="C:\Users\euget\Downloads\Fisica Computacional\P2 - Modelo de Ising\Proyecto P2\vol\modules" />
-      <recent name="C:\Users\euget\Downloads\Fisica Computacional\P2 - Modelo de Ising\Proyecto P2" />
     </key>
   </component>
   <component name="RunManager" selected="Python.vol">
@@ -295,7 +352,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717405325937</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Finished simulations and results. Final commit?">
+      <option name="closed" value="true" />
+      <created>1719329316539</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1719329316539</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -314,6 +379,7 @@
     <MESSAGE value="Voluntary exercise first code" />
     <MESSAGE value="Voluntary modifications for completing the analysis and results" />
     <MESSAGE value="Finished first simulation, finished simulation results and ran first analysis" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished first simulation, finished simulation results and ran first analysis" />
+    <MESSAGE value="Finished simulations and results. Final commit?" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished simulations and results. Final commit?" />
   </component>
 </project>
